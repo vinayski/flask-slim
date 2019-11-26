@@ -17,6 +17,6 @@ jobs:
       
     - name: test docker image
       run: |
-        docker run -d --rm flask:latest flask
+        docker run -d --rm flask:latest --name flask
         docker ps
         docker stop flask
