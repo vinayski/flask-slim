@@ -12,3 +12,9 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
+    - name: test docker image
+      run: |
+        docker run -d --rm 
+        docker ps
+        docker stop
