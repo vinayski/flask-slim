@@ -11,10 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        docker build . --file Dockerfile --tag flask:latest
+        docker image ls
       
     - name: test docker image
       run: |
-        docker run -d --rm 
+        docker run -d --rm flask:latest flask
         docker ps
-        docker stop
+        docker stop flask
