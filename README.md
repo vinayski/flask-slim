@@ -2,5 +2,5 @@
 # flask-slim
 slim docker image running flask apps
 
-#How to build this image
+### How to build this image
 docker build . --file Dockerfile --tag slim-flask:latest
